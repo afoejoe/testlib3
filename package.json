@@ -1,0 +1,46 @@
+{
+  "name": "sc-context",
+  "version": "2.0.0",
+  "description": "Theme Context",
+  "main": "index.js",
+  "jsnext:main": "index.es.js",
+  "module": "index.es.js",
+  "author": "a.sterhov",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "git+http://gitlab.securitycode.ru/front/sc-context.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "http://npm.securitycode.ru"
+  },
+  "scripts": {
+    "lint:js": "eslint src",
+    "fix:js": "eslint src --color --format stylish --fix",
+    "clean": "rimraf build",
+    "build:package": "npm run clean && npm run build:cjs && npm run build:copy-files && npm run build:es6",
+    "build:copy-files": "cp package.json README.md build/",
+    "build:cjs": "babel ./src --out-dir ./build --copy-files",
+    "build:es6": "NODE_ENV=production BABEL_ENV=modules babel ./src/index.js --out-file ./build/index.es.js",
+    "pub": "npm run build:package && cd build && npm publish"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.13.1 || ^17.0.1",
+    "react-dom": "^16.13.1 || ^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "sc-presets": "^0.3.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "prop-types": "^15.7.2"
+  }
+}
