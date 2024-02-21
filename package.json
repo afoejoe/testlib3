@@ -1,5 +1,5 @@
 {
-  "name": "sc-context",
+  "name": "@afoejoe/sc-context",
   "version": "2.0.0",
   "description": "Theme Context",
   "main": "index.js",
@@ -8,11 +8,11 @@
   "author": "a.sterhov",
   "license": "UNLICENSED",
   "repository": {
-    "url": "git+http://gitlab.securitycode.ru/front/sc-context.git",
+    "url": "https://github.com/afoejoe/testlib3.git",
     "type": "git"
   },
   "publishConfig": {
-    "registry": "http://npm.securitycode.ru"
+    "registry": "https://www.npmjs.com/~afoejoe"
   },
   "scripts": {
     "lint:js": "eslint src",
